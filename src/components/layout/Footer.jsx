@@ -24,7 +24,7 @@ const FOOTER_LINKS = {
 export default function Footer() {
   return (
     <footer className={styles.footer} role="contentinfo">
-      <div className={`${styles.inner} container`}>
+      <div className={styles.inner}>
         <div className={styles.top}>
           {/* Brand column */}
           <div className={styles.brand}>
