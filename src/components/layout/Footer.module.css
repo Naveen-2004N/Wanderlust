@@ -78,7 +78,8 @@
 }
 @media (max-width: 560px) {
   .footer { padding: var(--sp-48) 5%; }
-  .top { grid-template-columns: 1fr; gap: var(--sp-32); }
+  /* Create a 2-column layout for links on mobile */
+  .top { grid-template-columns: 1fr 1fr; gap: var(--sp-32) var(--sp-16); }
   .bottom { flex-direction: column; align-items: flex-start; gap: var(--sp-12); }
   .copy { line-height: 1.5; }
 }
