@@ -8,7 +8,7 @@ A front-end React application for the **TAP Academy Front-End Developer Assessme
 
 ## Live Demo
 
-> _Add your deployment URL here after deploying to Vercel._
+> https://wanderlust-th1b.onrender.com/
 
 ---
 
@@ -102,16 +102,16 @@ Open [http://localhost:5173](http://localhost:5173)
 
 ---
 
-## Deploy to Vercel
+## Deploy to Render
 
 1. Push to GitHub (`.env` is gitignored — never committed)
-2. Import the repo at [vercel.com](https://vercel.com)
-3. Add environment variables in the Vercel dashboard under **Settings → Environment Variables**:
+2. Import the repo at [render.com](https://render.com)
+3. Add environment variables in the Render dashboard under **Settings → Environment Variables**:
    - `VITE_OPENWEATHER_KEY`
    - `VITE_GEMINI_KEY`
    - `VITE_PEXELS_KEY`
    - `VITE_OPENCAGE_KEY`
-4. Deploy — Vercel auto-detects Vite
+4. Deploy — Render auto-detects Vite
 
 ---
 
