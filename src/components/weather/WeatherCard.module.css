@@ -1,0 +1,112 @@
+/* Normal weather card */
+.card {
+  background: linear-gradient(135deg, var(--color-deep-lagoon) 0%, #005a62 100%);
+  color: var(--color-parchment);
+  border-radius: var(--r-md);
+  padding: var(--sp-20) var(--sp-24);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-16);
+}
+
+.header { display: flex; align-items: center; justify-content: space-between; }
+.location {
+  display: flex; align-items: center; gap: 5px;
+  font-size: var(--text-body-sm);
+  font-weight: var(--fw-medium);
+  color: rgba(255,254,240,0.7);
+  overflow: hidden;
+}
+.location span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 140px; }
+.liveBadge {
+  font-size: 9px;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.12em;
+  background: var(--color-lime-pulse);
+  color: var(--color-deep-lagoon);
+  padding: 3px 8px;
+  border-radius: var(--r-pill);
+  flex-shrink: 0;
+}
+
+.main { display: flex; align-items: center; gap: var(--sp-12); }
+.icon { filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2)); flex-shrink: 0; }
+.temp {
+  font-size: 44px;
+  font-weight: var(--fw-bold);
+  letter-spacing: -1px;
+  line-height: 1;
+  color: var(--color-parchment);
+}
+.condition {
+  font-size: var(--text-body-sm);
+  color: rgba(255,254,240,0.65);
+  text-transform: capitalize;
+  margin-top: 3px;
+}
+
+.details {
+  display: flex;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: var(--sp-14, 14px);
+  gap: 0;
+}
+.detail {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-right: var(--sp-12);
+}
+.detail:not(:last-child) {
+  border-right: 1px solid rgba(255,255,255,0.1);
+  margin-right: var(--sp-12);
+}
+.detailLabel {
+  font-size: 9px;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,254,240,0.45);
+}
+.detailVal {
+  font-size: var(--text-body-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-parchment);
+}
+
+/* Skeleton parts */
+.skelHeader { display: flex; justify-content: space-between; align-items: center; }
+.skelMain { display: flex; align-items: center; gap: var(--sp-12); }
+.skelLine {}
+
+/* Error card — clean, no yellow */
+.errorCard {
+  background: var(--bg-card);
+  border: 1.5px dashed rgba(0,68,73,0.15);
+  border-radius: var(--r-md);
+  padding: var(--sp-20) var(--sp-24);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-6);
+}
+.errorIcon { font-size: 2rem; }
+.errorTitle {
+  font-size: var(--text-body-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--text-primary);
+}
+.errorMsg {
+  font-size: var(--text-caption);
+  color: var(--text-body);
+  opacity: 0.65;
+  line-height: 1.5;
+}
+.errorLocation {
+  font-size: var(--text-caption);
+  font-weight: var(--fw-semibold);
+  color: var(--color-pine);
+  margin-top: var(--sp-4);
+}

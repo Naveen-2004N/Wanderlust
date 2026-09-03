@@ -1,0 +1,64 @@
+/* Announcement bar (40px) + Navbar (68px) = 108px */
+.page { padding-top: 108px; }
+
+/* ── Header ── */
+.header {
+  background: var(--color-deep-lagoon);
+  overflow: hidden;
+}
+.headerInner {
+  padding-top: var(--sp-64);
+  padding-bottom: var(--sp-48);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-20);
+}
+.tag { color: rgba(215,255,194,0.7) !important; }
+.title {
+  font-size: clamp(var(--text-heading), 4.5vw, 52px);
+  font-weight: var(--fw-light);
+  letter-spacing: -1px;
+  color: var(--color-parchment);
+  line-height: 1.08;
+}
+.accent { color: var(--color-marigold); }
+.sub {
+  font-size: var(--text-body);
+  color: rgba(255,254,240,0.6);
+  line-height: 1.6;
+  max-width: 500px;
+}
+.searchWrap { max-width: 780px; }
+
+/* Ticker */
+.ticker {
+  display: flex;
+  gap: var(--sp-40);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: var(--sp-16) var(--sp-40);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.ticker::-webkit-scrollbar { display: none; }
+.tickerItem {
+  font-size: 11px;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.2em;
+  color: rgba(255,254,240,0.18);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── Grid section ── */
+.gridSection {
+  padding-block: var(--sp-64);
+}
+
+@media (max-width: 768px) {
+  .page { padding-top: 108px; }
+  .title { font-size: var(--text-heading); }
+  .headerInner { padding-top: var(--sp-48); padding-bottom: var(--sp-32); }
+}
+@media (max-width: 480px) {
+  .page { padding-top: 100px; }
+}

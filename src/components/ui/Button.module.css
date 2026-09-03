@@ -1,0 +1,103 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-base);
+  font-weight: var(--fw-medium);
+  border-radius: var(--r-pill);
+  cursor: pointer;
+  border: none;
+  transition: background var(--dur-fast) var(--ease),
+              color var(--dur-fast) var(--ease),
+              transform var(--dur-fast) var(--ease),
+              box-shadow var(--dur-fast) var(--ease);
+  white-space: nowrap;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}
+.btn:not(:disabled):hover { transform: translateY(-1px); }
+.btn:not(:disabled):active { transform: translateY(0); }
+
+/* Sizes */
+.size-sm { font-size: 13px; padding: 8px 18px; }
+.size-md { font-size: 15px; padding: 12px 24px; }
+.size-lg { font-size: 16px; padding: 14px 32px; }
+
+/* ── Primary: Electric Iris ── */
+.primary {
+  background: var(--color-electric-iris);
+  color: #fff;
+}
+.primary:not(:disabled):hover {
+  background: #3a2ecc;
+  box-shadow: var(--shadow-hover);
+}
+
+/* ── Secondary: Charcoal ── */
+.secondary {
+  background: var(--color-charcoal);
+  color: var(--color-snow);
+}
+.secondary:not(:disabled):hover {
+  background: #111;
+  box-shadow: var(--shadow-hover);
+}
+
+/* ── Ghost: Outlined pill ── */
+.ghost {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1.5px solid var(--color-charcoal);
+}
+.ghost:not(:disabled):hover {
+  background: var(--color-charcoal);
+  color: var(--color-snow);
+}
+
+/* ── Marigold ── */
+.marigold {
+  background: var(--color-marigold);
+  color: var(--color-charcoal);
+}
+.marigold:not(:disabled):hover {
+  background: #f0ad0a;
+  box-shadow: 0 4px 16px rgba(252,189,28,0.4);
+}
+
+/* ── Pine ── */
+.pine {
+  background: var(--color-pine);
+  color: var(--color-snow);
+}
+.pine:not(:disabled):hover {
+  background: #004d27;
+  box-shadow: var(--shadow-hover);
+}
+
+/* ── Icon slots ── */
+.iconLeft, .iconRight {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1em;
+}
+
+/* ── Spinner ── */
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

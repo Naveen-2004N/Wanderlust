@@ -1,0 +1,173 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--color-charcoal);
+  overflow: hidden;
+}
+
+/* ── Video background ── */
+.videoBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: #000;
+}
+.video {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  /* Removed opacity and blend-mode so the video is full color again */
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+}
+
+/* ── Content ── */
+.content {
+  position: relative;
+  z-index: 2;
+  padding-top: calc(var(--nav-height) + var(--sp-64));
+  padding-bottom: var(--sp-64);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-32);
+}
+
+.textBlock {
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-20);
+}
+
+.eyebrow {
+  font-size: var(--text-caption);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-marigold);
+  animation: fadeUp 0.6s ease both;
+}
+
+.headline {
+  display: flex;
+  flex-direction: column;
+  font-weight: var(--fw-light);
+  letter-spacing: -2px;
+  line-height: 0.95;
+  color: var(--color-snow);
+  font-size: clamp(48px, 8vw, 88px);
+}
+.line1 { animation: fadeUp 0.6s ease 0.1s both; }
+.line2 { animation: fadeUp 0.6s ease 0.2s both; }
+.accent {
+  font-style: normal;
+  color: var(--color-lime-pulse);
+}
+
+.sub {
+  font-size: clamp(var(--text-body), 1.5vw, var(--text-subheading));
+  font-weight: var(--fw-light);
+  color: rgba(255,255,255,0.8);
+  line-height: 1.6;
+  animation: fadeUp 0.6s ease 0.3s both;
+}
+
+/* CTAs */
+.heroCtas {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-20);
+  flex-wrap: wrap;
+  animation: fadeUp 0.6s ease 0.4s both;
+}
+.primaryCta {
+  background: var(--color-electric-iris);
+  color: #fff;
+  font-size: var(--text-body);
+  font-weight: var(--fw-semibold);
+  padding: 14px 32px;
+  border-radius: var(--r-pill);
+  text-decoration: none;
+  transition: background var(--dur-fast), transform var(--dur-fast), box-shadow var(--dur-fast);
+}
+.primaryCta:hover {
+  background: #3a2ecc;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(72,60,255,0.45);
+}
+.ghostCta {
+  color: rgba(255,255,255,0.75);
+  font-size: var(--text-body-sm);
+  font-weight: var(--fw-medium);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 2px;
+  transition: color var(--dur-fast), border-color var(--dur-fast);
+}
+.ghostCta:hover { color: #fff; border-color: rgba(255,255,255,0.8); }
+
+/* Social proof */
+.proof {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-12);
+  font-size: var(--text-body-sm);
+  color: rgba(255,255,255,0.65);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--r-pill);
+  padding: 8px 18px;
+  width: fit-content;
+  backdrop-filter: blur(8px);
+  animation: fadeUp 0.6s ease 0.5s both;
+}
+.proofDots {
+  display: flex;
+  gap: 5px;
+}
+.proofDots span {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  display: block;
+}
+
+/* ── Search bar — bottom of hero, NO overlap ── */
+.searchWrap {
+  position: relative;
+  z-index: 2;
+  padding-bottom: var(--sp-48);
+  padding-top: var(--sp-16);
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content {
+    padding-top: calc(var(--nav-height) + var(--sp-40));
+    padding-bottom: var(--sp-40);
+    gap: var(--sp-24);
+  }
+  .searchWrap { padding-bottom: var(--sp-32); }
+  .heroCtas { gap: var(--sp-12); }
+  .headline { font-size: clamp(36px, 10vw, 56px); letter-spacing: -1px; }
+}
+@media (max-width: 480px) {
+  .primaryCta { padding: 12px 24px; font-size: var(--text-body-sm); }
+}

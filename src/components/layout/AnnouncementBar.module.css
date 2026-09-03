@@ -1,0 +1,43 @@
+.bar {
+  /* Static — pushes navbar below it, no overlap */
+  position: sticky;
+  top: 0;
+  z-index: 201; /* above navbar */
+  background: var(--color-morning-sky);
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: var(--sp-48);
+}
+.msg {
+  font-size: var(--text-body-sm);
+  font-weight: var(--fw-medium);
+  color: var(--color-deep-lagoon);
+  text-align: center;
+}
+.cta {
+  color: var(--color-ember);
+  font-weight: var(--fw-semibold);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--dur-fast);
+}
+.cta:hover { color: #b84000; }
+.dismiss {
+  position: absolute;
+  right: var(--sp-16);
+  font-size: 1.1rem;
+  color: var(--color-deep-lagoon);
+  opacity: 0.6;
+  padding: 4px 8px;
+  border-radius: 4px;
+  line-height: 1;
+  transition: opacity var(--dur-fast);
+}
+.dismiss:hover { opacity: 1; }
+
+@media (max-width: 480px) {
+  .bar { height: auto; padding: 8px var(--sp-40) 8px var(--sp-16); }
+  .msg { font-size: 12px; }
+}

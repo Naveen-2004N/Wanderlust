@@ -1,0 +1,24 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-12);
+  padding: var(--sp-48) var(--sp-24);
+  text-align: center;
+}
+.icon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+.title {
+  font-size: var(--text-heading-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+}
+.message {
+  font-size: var(--text-body-sm);
+  color: var(--text-body);
+  max-width: 360px;
+  line-height: 1.5;
+}
